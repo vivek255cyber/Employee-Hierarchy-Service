@@ -170,7 +170,7 @@ Database Configuration
 | Driver Class | org.h2.Driver |
 | JDBC URL | jdbc:h2:mem:testdb |
 | Username | sa |
-| Password | *(blank)* |
+| Password | *password* |
 
 ---
 
