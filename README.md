@@ -60,8 +60,61 @@ src
 
 The application authenticates users using a JWT token.
 
-The JWT contains the following claims:
+Before accessing any secured API, you must first authenticate using the **Login API** to generate a JWT token.
 
+The generated token should then be passed in the `Authorization` header for all subsequent requests.
+
+---
+
+# Authentication API
+
+## Generate JWT Token
+
+**Endpoint**
+
+```
+POST /api/auth/login
+```
+
+**Request Body**
+
+Manager Login
+
+```json
+{
+    "username": "manager1",
+    "password": "password123"
+}
+```
+
+Employee Login
+
+```json
+{
+    "username": "employee1",
+    "password": "password123"
+}
+```
+
+### Sample cURL
+
+```bash
+curl --location 'http://localhost:8080/api/auth/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "username": "manager1",
+    "password": "password123"
+}'
+```
+
+### Success Response
+
+```json
+{
+    "token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW5hZ2VyMSIsInVzZXJJZCI6MSwidXNlcm5hbWUiOiJtYW5hZ2VyMSIsImxvZ2luSWQiOiJhbGljZS5tYW5hZ2VyIiwid29ya3NwYWNlSWQiOiJNQU5BR0VSIiwiaWF0IjoxNzg0NDA0NzM4LCJleHAiOjE3ODQ0NDA3Mzh9.xxxxxxxxxxxxxxxxx"
+}
+```
+The JWT contains the following claims
 ```json
 {
   "userId": 1,
