@@ -404,6 +404,4 @@ Expected:
 
 ## Author
 
-Employee Hierarchy Management API
-
-Spring Boot Interview Assignment
+Vivek Mishra
